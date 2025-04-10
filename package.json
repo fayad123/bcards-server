@@ -1,0 +1,24 @@
+{
+  "name": "bcards-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "{\r   \"title\": \"Business Card Title\",\r   \"subtitle\": \"Business Card Subtitle\",\r   \"description\": \"This is a description of the business card.\",\r   \"phone\": \"0538346915\",\r   \"email\": \"examsspדle22@business.com\",\r   \"web\": \"https://www.businesswebsite.com\",\r   \"image\": {\r     \"url\": \"https://example.com/image.jpg\",\r     \"alt\": \"Business Card Image\"\r   },\r   \"address\": {\r     \"state\": \"California\",\r     \"country\": \"USA\",\r     \"city\": \"Los Angeles\",\r     \"street\": \"123 Business St\",\r     \"houseNumber\": 456,\r     \"zip\": \"90001\"\r   },\r   \"likes\": []\r }",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "chalk": "^4.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
+    "mongoose": "^8.12.1"
+  },
+  "devDependencies": {}
+}

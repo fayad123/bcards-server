@@ -1,0 +1,31 @@
+Logs
+*.logs
+*.access
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+
+# Local environment files
+*.local
+#.env # Uncomment to ignore .env files (often contain sensitive data)
+
+# Editor directories and files
+.vscode/*        # Ignore VSCode settings
+!.vscode/extensions.json  # Track recommended extensions for VSCode
+.idea/           # Ignore JetBrains IDE settings
+.DS_Store        # macOS specific file
+*.suo            # Visual Studio user options
+*.ntvs*          # Visual Studio Code project files
+*.njsproj        # Node.js project files in Visual Studio
+*.sln            # Solution files (Visual Studio)
+*.sw?            # Swap files (editor temporary files)
