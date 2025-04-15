@@ -21,6 +21,7 @@ const userSchema = new mongoose.Schema({
       zip: { type: Number, required: true },
     },
   },
+  loginStamp: { type: Array },
   image: {
     url: {
       type: String,
