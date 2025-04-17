@@ -37,7 +37,7 @@ const cardSchema = Joi.object({
 router.post("/", auth, async (req, res) => {
   try {
     // chech if the user is admin or business or not
-    if (!(req.payload.isBusiness || req.payload.isAdmin)) {
+    if (!req.payload.isBusiness && !req.payload.isAdmin) {
       console.log(chalk.red("Only business or admin accounts can add cards"));
       return res.status(403).send("just business or admin users can add cards");
     }
@@ -76,7 +76,7 @@ router.get("/", async (req, res) => {
 // get card by id
 router.get("/:cardId", async (req, res) => {
   try {
-    const cards = await Cards.findOne({_id:req.params.cardId});
+    const cards = await Cards.findOne({ _id: req.params.cardId });
 
     if (!cards) return res.status(404).send("no cards available");
 
@@ -100,17 +100,15 @@ router.delete("/:cardId", async (req, res) => {
 });
 
 // update card by id
-router.put("/:cardId",auth, async (req, res) => {
+router.put("/:cardId", auth, async (req, res) => {
   try {
-    // find card 
+    // find card
     const card = await Cards.findById(req.params.id);
     if (!card) return res.status(404).send("User not found");
 
     // check if user cave permission to update the card
     if (card.user_id !== req.payload._id && !req.payload.isAdmin)
-      return res
-        .status(401)
-        .send("owner or admin users can update this card");
+      return res.status(401).send("owner or admin users can update this card");
 
     // check body validation
     const { error } = cardSchema.validate(req.body);
@@ -139,7 +137,7 @@ router.patch("/:cardId", auth, async (req, res) => {
     // Check if the user is authorized to edit their profile
     if (!req.payload._id) return res.status(401).send("Unauthorized");
 
-    let card = await Cards.findOne({_id:req.params.cardId});
+    let card = await Cards.findOne({ _id: req.params.cardId });
     if (!card) return res.status(400).send("card not found");
 
     // Check if the user has already liked the card
@@ -162,6 +160,5 @@ router.patch("/:cardId", auth, async (req, res) => {
     res.status(400).send(error.message);
   }
 });
-
 
 module.exports = router;

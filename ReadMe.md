@@ -143,7 +143,7 @@ Body (JSON)
   "title": "Business Card Title",
   "subtitle": "Business Card Subtitle",
   "description": "This is a description of the business card.",
-  "phone": "0538346915",
+  "phone": "0539730079",
   "email": "examsspדle22@business.com",
   "web": "https://www.businesswebsite.com",
   "image": {

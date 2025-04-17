@@ -10,7 +10,7 @@ const cardSchema = mongoose.Schema(
       required: true,
       match: /^05\d{8,9}$/,
     },
-    email: { type: String, required: true, minlength: 5 },
+    email: { type: String, required: true, minlength: 5, unique: true },
     web: { type: String },
     image: {
       type: {

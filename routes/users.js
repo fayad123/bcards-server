@@ -119,7 +119,14 @@ router.post("/login", async (req, res) => {
 
     // set token and send it to user
     const token = jwt.sign(
-      _.pick(user, ["_id", "name.first", "name.last", "isAdmin", "isBusiness"]),
+      _.pick(user, [
+        "_id",
+        "name.first",
+        "name.last",
+        "email",
+        "isAdmin",
+        "isBusiness",
+      ]),
       process.env.JWT_SECRET
     );
 
